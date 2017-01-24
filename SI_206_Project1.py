@@ -164,6 +164,96 @@ if __name__ == "__main__":
 
 # INCLUDE YOUR TESTS FROM HW2 HERE.
 
+## Test that if you create a card with rank 12, its rank will be "Queen"
+class Tests(unittest.TestCase):
+	def test_instvar_1(self):
+		x = Card(0,12)
+		self.assertEqual(x.rank, "Queen")
+
+## Test that if you create a card with rank 1, its rank will be "Ace"
+	def test_instvar_2(self):
+		x = Card(0,1)
+		self.assertEqual(x.rank, "Ace")
+
+## Test that if you create a card instance with rank 3, its rank will be 3
+
+	def test_instvar_3(self):
+		x = Card(0,3)
+		self.assertEqual(x.rank, 3)
+
+## Test that if you create a card instance with suit 1, it will be suit "Clubs"
+
+	def test_instvar_4(self):
+		x = Card(1)
+		self.assertEqual(x.suit, "Clubs")
+
+
+## Test that if you create a card instance with suit 2, it will be suit "Hearts"
+
+	def test_instvar_5(self):
+		x = Card(2)
+		self.assertEqual(x.suit, "Hearts")
+
+
+## Test that if you create a card instance, it will have access to a variable suit_names that contains the list ["Diamonds","Clubs","Hearts","Spades"]
+
+	def test_instvar_6(self):
+		x = Card(0,3)
+		self.assertEqual(x.suit_names, ["Diamonds","Clubs","Hearts","Spades"])
+
+
+## Test that if you invoke the __str__ method of a card instance that is created with suit=2, rank=7, it returns the string "7 of Hearts"
+
+	def test_instvar_7(self):
+		x = Card(2,7)
+		self.assertEqual(x.__str__(), "7 of Hearts")
+
+
+## Test that if you create a deck instance, it will have 52 cards in its cards instance variable
+
+	def test_instvar_8(self):
+		x = Deck()
+		self.assertEqual(len(x.cards), 52)
+
+
+## Test that if you invoke the pop_card method on a deck, it will return a card instance.
+
+	def test_instvar_9(self):
+		x = Deck()
+		self.assertEqual(type(x.pop_card()), type(Card()))
+
+
+## Test that the return value of the play_war_game function is a tuple with three elements, the first of which is a string. (This will probably require multiple test methods!)
+
+	def test_instvar_10_1(self):
+		x = play_war_game(testing=True)
+		self.assertEqual(type(x), type(tuple()))
+
+	def test_instvar_10_2(self):
+		x = play_war_game(testing=True)
+		self.assertEqual(len(x), 3)
+
+	def test_instvar_10_3(self):
+		x = play_war_game(testing=True)
+		self.assertEqual(type(x[0]), type(str()))
+
+
+
+
+## Write at least 2 additional tests (not repeats of the above described tests). Make sure to include a descriptive message in these two so we can easily see what you are testing!
+
+	def test_instvar_11(self):
+		x = Deck()
+		self.assertEqual(type(x.cards[0]), type(Card()), "testing that the first item in the list created by .cards is an instance of Card()")
+
+	def test_instvar_12(self):
+		x = Deck()
+		self.assertEqual(len(x.__str__()), 688)  #should always be the same number characters every time because 
+													#it's listing every version of the 52 cards
+
+
+
+
 ## Add tests, as described in instructions.
 ## Here is a sample.
 class HandClassTests(unittest.TestCase):
