@@ -266,10 +266,49 @@ class HandClassTests(unittest.TestCase):
 		self.assertEqual(len(h.cards_in_hand),num+1) # Testing that the new number of cards in the hand is equal to the old number plus 1
 	# Add more here!
 
+	def test_instance1(self):
+		d = Deck()
+		h = Hand(deck_to_use = d, num_cards =3)
+		self.assertEqual(len(h.cards_in_hand), 3, "testing that the cards_in_hand instance returns my input number")
+
+	def test_instance2(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual(type(h.deck), type(Deck()), "testing that the type of the instance variable is the same as the type of a Deck() instance")
+
+	def test_instance3(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual(type(h.get_ranks_available()), type([]), "testing that the get_ranks_available() method returns a list")
+
+	def test_instance4(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual(type(h.get_suits_available()), type([]), "testing that the get_suits_available() method returns a list")
+
+	def test_instance5(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual()
+
+	def test_instance6(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual()
+
+	def test_instance7(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual()
+
+	def test_instance8(self):
+		d = Deck()
+		h = Hand(d)
+		self.assertEqual()
 ## Hints to help come up with tests:
 ## - Create a Deck instance in each method where you want to test an instance of class Hand, because you need a Deck instance to create a Hand instance!
-## - To test the Hand constructor, you may want to test that the Hand class creates a hand with 3 cards if you pass in a Deck instance to the constructor, and use the default num_cards.
-## - You should also test that if you pass in a specific number of cards to the Hand class constructor, it creates an instance of class Hand with that specific number of cards! Gotta be sure that part of the Hand class constructor (__init__ method) works correctly.
+## - You should also test that if you pass in a specific number of cards to the Hand class constructor, it creates an instance of class Hand with that specific number of cards!
+#     Gotta be sure that part of the Hand class constructor (__init__ method) works correctly.
 
 
 
