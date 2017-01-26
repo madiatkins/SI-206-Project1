@@ -50,7 +50,7 @@ class Deck(object):
 
 	def sort_cards(self):
 		# Basically, remake the deck in a sorted way
-		# This is assuming you cannot have more than the normal 52 cars in a deck
+		# This is assuming you cannot have more than the normal 52 cards in a deck
 		self.cards = []
 		for suit in range(4):
 			for rank in range(1,14):
@@ -86,7 +86,6 @@ class Hand(object):
 		return ranks
 
 	def specific_card(self,suit,rank):
-		card_strs = []
 		ind = 0
 		for c in self.cards_in_hand:
 			if c.suit == suit and c.rank == rank:
@@ -236,8 +235,6 @@ class Tests(unittest.TestCase):
 	def test_instvar_10_3(self):
 		x = play_war_game(testing=True)
 		self.assertEqual(type(x[0]), type(str()))
-
-
 
 
 ## Write at least 2 additional tests (not repeats of the above described tests). Make sure to include a descriptive message in these two so we can easily see what you are testing!
