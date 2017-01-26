@@ -107,7 +107,7 @@ class Hand(object):
 			total.append(card.__str__())
 		# shows up in whatever order the cards are in
 		return "\n".join(total) # returns a multi-line string listing each card
-
+		
 #### Functions for games ####
 
 # Function that plays an altered version of the game of War when invoked.
@@ -289,26 +289,25 @@ class HandClassTests(unittest.TestCase):
 	def test_instance5(self):
 		d = Deck()
 		h = Hand(d)
-		self.assertEqual()
+		num = len(h.cards_in_hand)
+		h.place_card()
+		self.assertEqual(len(h.cards_in_hand), num-1, "testing that the number of cards in hand after placing a card is equal to the old number minus 1")
 
 	def test_instance6(self):
 		d = Deck()
 		h = Hand(d)
-		self.assertEqual()
+		self.assertEqual(type(h.get_suits_available()[0]), type(str()), "testing that the type of the first element in the list returned is a string")
 
 	def test_instance7(self):
 		d = Deck()
 		h = Hand(d)
-		self.assertEqual()
+		self.assertIn(type(h.get_ranks_available()[0]), [type(int()), type(str())], "testing that the type of the first element in the list returned either an integer or a string type")
 
 	def test_instance8(self):
 		d = Deck()
 		h = Hand(d)
-		self.assertEqual()
-## Hints to help come up with tests:
-## - Create a Deck instance in each method where you want to test an instance of class Hand, because you need a Deck instance to create a Hand instance!
-## - You should also test that if you pass in a specific number of cards to the Hand class constructor, it creates an instance of class Hand with that specific number of cards!
-#     Gotta be sure that part of the Hand class constructor (__init__ method) works correctly.
+		
+		self.assertEqual(type(h.__str__()), type(str()), "testing that h.__str__() actually returns a string type" )
 
 
 
